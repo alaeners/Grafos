@@ -15,22 +15,25 @@ namespace listaPratica1GrafosAlaene
 
     class Vertice
     {
+        /*Declarando as variaveis para acesso nos métodos e verificar os grafos*/
         public int grau;
         public int valor;
         public string tipo_grafo;
 
-        public Vertice(int valor, ref ArestaDirecionada grafo)
+        /*Contrutor da classe para criar vertices com  X valores*/
+        public Vertice(int valor, ref GrafoDirigido grafo)
         {
             this.valor = valor;
         }
 
-        public Vertice(int valor, ref ArestaNaoDirecionada grafo)
+        public Vertice(int valor, ref GrafoNaoDirigido grafo)
         {
             this.valor = valor;
-            this.grau = CalculaGrau(ref gr);
+            this.grau = CalculaGrau(ref grafo);
         }
 
-        private int CalculaGrau(ref ArestaNaoDirecionada grafo)
+        /*Verifica o grau dos vértices*/
+        private int CalculaGrau(ref GrafoNaoDirigido grafo)
         {
             return grafo.getGrau(this.valor) + 1;
         }

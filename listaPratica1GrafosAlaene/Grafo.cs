@@ -14,10 +14,9 @@ namespace listaPratica1GrafosAlaene
      */
     class Grafo
     {
-
         public int numVertice;
         public List<Vertice> ListaVertice;
-
+        /*Contruindo um grafo e criando uma nova lista de vestices para ele*/ 
         public Grafo()
         {
             Program.cabecalho();
@@ -32,12 +31,25 @@ namespace listaPratica1GrafosAlaene
         }
         public bool isCompleto()
         {
-            return false;
+         //retorna true se o grafo for simples e se o grau de todos os vertices forem iguais a qtde total de vertices -1 */
+            if (IsSimple() && VerificaGrauCompl())
+            {
+                return true;
+            }
+            else
+                return false;
         }
         public bool isConexo()
         {
+            // verifica se é possível traçar um caminho entre um qualquer vertice inicial,e um vertice final
+            int v_aux = ListaAresta.First().v1.valor;
+            int v_aux2 = ListaAresta.First().v2.valor;
+
+            if (ExisteIsolado() > 0) // verifica se a  qtde de vertices isolados é maior que ZERO.
+            {
+                return false;
+            }
             return true;
         }
-
     }
 }

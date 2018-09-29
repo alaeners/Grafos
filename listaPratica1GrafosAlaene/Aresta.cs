@@ -17,13 +17,13 @@ namespace listaPratica1GrafosAlaene
         public Vertice v1;
         public Vertice v2;
         public int peso;
+        
+        /*Contruindo uma aresta*/ 
         public Aresta(Vertice v1, Vertice v2, int peso)
         {
             this.v1 = v1;
             this.v2 = v2;
             this.peso = peso;
         }
-
-
     }
 }
