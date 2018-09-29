@@ -140,9 +140,24 @@ namespace listaPratica1GrafosAlaene
             return cont;
         }
 
-        Grafo getComplementar()
+        GrafoNaoDirigido getComplementar()
         {
-            return null;
+            GrafoNaoDirigido Complementar = new GrafoNaoDirigido();
+            Complementar.ListaVertice = new List<Vertice>();
+            Complementar.ListaAresta = new List<Aresta>();
+            foreach (var item in ListaVertice)
+            {
+                //paca cada vertice eu paasso em todos 
+                foreach (var item2 in ListaVertice)
+                {
+                    if (item != item2 && !isAdjacente(item, item2))
+                    {// add vertice
+                        Aresta aux = new Aresta(item, item2, 0);
+                        Complementar.ListaAresta.Add(aux);
+                    }
+                }
+            }
+             return Complementar;
         }
     }
 }
