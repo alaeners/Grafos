@@ -21,7 +21,7 @@ namespace listaPratica1GrafosAlaene
         public string tipo_grafo;
 
         /*Contrutor da classe para criar vertices com  X valores*/
-        public Vertice(int valor, ref GF_Direcionado grafo)
+        public Vertice(int valor, ref GrafoDirigido grafo)
         {
             this.valor = valor;
         }
@@ -35,7 +35,7 @@ namespace listaPratica1GrafosAlaene
         /*Verifica o grau dos vértices*/
         private int CalculaGrau(ref GrafoNaoDirigido grafo)
         {
-            return grafo.getGrau(this.valor) + 1;
+            return grafo.getGrau(this) + 1;
         }
     }
 }
