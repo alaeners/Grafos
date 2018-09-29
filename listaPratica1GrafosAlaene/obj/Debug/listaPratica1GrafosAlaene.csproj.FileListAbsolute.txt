@@ -1,0 +1,7 @@
+C:\Users\Alaene\Documents\GitHub\Grafos\listaPratica1GrafosAlaene\listaPratica1GrafosAlaene\obj\Debug\listaPratica1GrafosAlaene.csprojAssemblyReference.cache
+C:\Users\Alaene\Documents\GitHub\Grafos\listaPratica1GrafosAlaene\listaPratica1GrafosAlaene\obj\Debug\listaPratica1GrafosAlaene.csproj.CoreCompileInputs.cache
+C:\Users\Alaene\Documents\GitHub\Grafos\listaPratica1GrafosAlaene\listaPratica1GrafosAlaene\bin\Debug\listaPratica1GrafosAlaene.exe.config
+C:\Users\Alaene\Documents\GitHub\Grafos\listaPratica1GrafosAlaene\listaPratica1GrafosAlaene\bin\Debug\listaPratica1GrafosAlaene.exe
+C:\Users\Alaene\Documents\GitHub\Grafos\listaPratica1GrafosAlaene\listaPratica1GrafosAlaene\bin\Debug\listaPratica1GrafosAlaene.pdb
+C:\Users\Alaene\Documents\GitHub\Grafos\listaPratica1GrafosAlaene\listaPratica1GrafosAlaene\obj\Debug\listaPratica1GrafosAlaene.exe
+C:\Users\Alaene\Documents\GitHub\Grafos\listaPratica1GrafosAlaene\listaPratica1GrafosAlaene\obj\Debug\listaPratica1GrafosAlaene.pdb
