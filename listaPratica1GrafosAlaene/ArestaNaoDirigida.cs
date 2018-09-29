@@ -12,14 +12,14 @@ namespace listaPratica1GrafosAlaene
      * Entrega via SGA em: 01/10/2018
      * Professora Eveline Alonso
      */
-    class Aresta
+    class ArestaNaoDirigida
     {
         public Vertice v1;
         public Vertice v2;
         public int peso;
         
         /*Contruindo uma aresta*/ 
-        public Aresta(Vertice v1, Vertice v2, int peso)
+        public ArestaNaoDirigida(Vertice v1, Vertice v2, int peso)
         {
             this.v1 = v1;
             this.v2 = v2;

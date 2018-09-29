@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace listaPratica1GrafosAlaene
 {
-    class ArestaDirecionada : Aresta
+    class ArestaDirigida : ArestaNaoDirigida
     {
         public int direcao;
 
-        public ArestaDirecionada(Vertice v1, Vertice v2, int peso, int direcao) : base(v1, v2, peso)
+        public ArestaDirigida(Vertice v1, Vertice v2, int peso, int direcao) : base(v1, v2, peso)
         {
             this.direcao = direcao;
         }
-
     }
 }

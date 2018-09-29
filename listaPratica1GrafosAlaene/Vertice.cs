@@ -21,7 +21,7 @@ namespace listaPratica1GrafosAlaene
         public string tipo_grafo;
 
         /*Contrutor da classe para criar vertices com  X valores*/
-        public Vertice(int valor, ref GrafoDirigido grafo)
+        public Vertice(int valor, ref GF_Direcionado grafo)
         {
             this.valor = valor;
         }

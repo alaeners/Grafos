@@ -13,11 +13,11 @@ namespace listaPratica1GrafosAlaene
      */
     class GrafoDirigido : Grafo
     {
-        public List<Aresta> ListaAresta;
+        public List<ArestaNaoDirigida> ListaAresta;
 
-        public GF_Direcionado(): base()
+        public GrafoDirigido(): base()
         {
-            this.ListaAresta = new List<Aresta>();
+            this.ListaAresta = new List<ArestaNaoDirigida>();
         }
         public int getGrauEntrada(Vertice v1)
         {
@@ -25,7 +25,7 @@ namespace listaPratica1GrafosAlaene
             int cont = 0;
             foreach (var item in ListaAresta)
             {
-                if ((item.v1.valor == v1) && (item.direcao == -1))
+                if ((item.v1.valor == v1.valor) && (item.direcao == -1))
                 {
                     cont++;
                 }
@@ -38,7 +38,8 @@ namespace listaPratica1GrafosAlaene
             int cont = 0;
             foreach (var item in ListaAresta)
             {
-                if ((item.v1.valor == v1) && (item.direcao == 1))
+                if ((item.v1.valor == v1.valor) 
+                    && (item.direcao == 1))
                 {
                     cont++;
                 }

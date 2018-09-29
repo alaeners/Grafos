@@ -14,10 +14,10 @@ namespace listaPratica1GrafosAlaene
      */
     class GrafoNaoDirigido : Grafo
     {
-        List<Aresta> ListaAresta;
+        List<ArestaNaoDirigida> ListaAresta;
         public GrafoNaoDirigido()
         {
-            ListaAresta = new List<Aresta>();
+            ListaAresta = new List<ArestaNaoDirigida>();
             ListaVertice = new List<Vertice>();
             this.numVertice = 0;
 
@@ -144,7 +144,7 @@ namespace listaPratica1GrafosAlaene
         {
             GrafoNaoDirigido Complementar = new GrafoNaoDirigido();
             Complementar.ListaVertice = new List<Vertice>();
-            Complementar.ListaAresta = new List<Aresta>();
+            Complementar.ListaAresta = new List<ArestaNaoDirigida>();
             foreach (var item in ListaVertice)
             {
                 //paca cada vertice eu paasso em todos 
@@ -152,7 +152,7 @@ namespace listaPratica1GrafosAlaene
                 {
                     if (item != item2 && !isAdjacente(item, item2))
                     {// add vertice
-                        Aresta aux = new Aresta(item, item2, 0);
+                        ArestaNaoDirigida aux = new ArestaNaoDirigida(item, item2, 0);
                         Complementar.ListaAresta.Add(aux);
                     }
                 }
