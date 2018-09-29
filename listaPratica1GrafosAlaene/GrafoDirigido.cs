@@ -6,7 +6,7 @@
      * Entrega via SGA em: 01/10/2018
      * Professora Eveline Alonso
      */
-    class grafo_dirigido
+    class GrafoDirigido
     {
         public int getGrauEntrada(Vertice v1)
         {

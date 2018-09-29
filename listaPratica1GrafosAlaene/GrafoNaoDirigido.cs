@@ -6,10 +6,23 @@
      * Entrega via SGA em: 01/10/2018
      * Professora Eveline Alonso
      */
-    class grafo_nao_dirigido
+    class GrafoNaoDirigido
     {
+
         public bool isAdjacente(Vertice v1, Vertice v2)
         {
+            foreach (var item in ListaAresta)
+            {
+                if (((item.v1.valor == v1) || (item.v1.valor == v1)) && ((item.v2.valor == v2) || (item.v2.valor == v2)))
+                {
+                    return true;
+                }
+
+                else
+                    return false;
+            }
+
+            return false;
             return true;
         }
         public int getGrau(Vertice v1)

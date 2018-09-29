@@ -12,8 +12,27 @@ namespace listaPratica1GrafosAlaene
      * Entrega via SGA em: 01/10/2018
      * Professora Eveline Alonso
      */
+
     class Vertice
     {
-        int totV, v1, v2 = 0;
+        public int grau;
+        public int valor;
+        public string tipo_grafo;
+
+        public Vertice(int valor, ref ArestaDirecionada grafo)
+        {
+            this.valor = valor;
+        }
+
+        public Vertice(int valor, ref ArestaNaoDirecionada grafo)
+        {
+            this.valor = valor;
+            this.grau = CalculaGrau(ref gr);
+        }
+
+        private int CalculaGrau(ref ArestaNaoDirecionada grafo)
+        {
+            return grafo.getGrau(this.valor) + 1;
+        }
     }
 }

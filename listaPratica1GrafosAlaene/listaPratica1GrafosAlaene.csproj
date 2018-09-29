@@ -44,8 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aresta.cs" />
-    <Compile Include="grafo-dirigido.cs" />
-    <Compile Include="grafo-nao-dirigido.cs" />
+    <Compile Include="GrafoDirigido.cs" />
+    <Compile Include="GrafoNaoDirigido.cs" />
     <Compile Include="Grafo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

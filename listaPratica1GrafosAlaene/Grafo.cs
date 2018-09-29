@@ -14,6 +14,18 @@ namespace listaPratica1GrafosAlaene
      */
     class Grafo
     {
+
+        public int numVertice;
+        public List<Vertice> ListaVertice;
+
+        public Grafo()
+        {
+            Program.cabecalho();
+
+            ListaVertice = new List<Vertice>();
+            this.numVertice = 0;
+        }
+
         public bool isNulo()
         {
             return true;
@@ -26,10 +38,6 @@ namespace listaPratica1GrafosAlaene
         {
             return true;
         }
-        public Grafo()
-        {
-            Program.cabecalho();
 
-        }
     }
 }
