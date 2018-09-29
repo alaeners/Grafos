@@ -100,6 +100,60 @@ namespace listaPratica1GrafosAlaene
             }
             return true;
         }
+
+        public bool isNulo()
+        {
+            if (ListaVertice == null
+                && ListaAresta == null)
+            {
+                return true;
+            }
+            else { return false;  }
+        }
+
+        public bool isCompleto()
+        {
+            //retorna true se o grafo for simples e se o grau de todos os vertices forem iguais a qtde total de vertices -1 */
+            if (IsSimple() && VerificaGrauCompl())
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool isConexo()
+        {
+            // verifica se é possível traçar um caminho entre um qualquer vertice inicial,e um vertice final
+            int v_aux = ListaAresta.First().v1.valor;
+            int v_aux2 = ListaAresta.First().v2.valor;
+
+            if (ExisteIsolado() > 0) // verifica se a  qtde de vertices isolados é maior que ZERO.
+            {
+                return false;
+            }
+            return true;
+        }
+
+        GrafoNaoDirigido getComplementar()
+        {
+            GrafoNaoDirigido Complementar = new GrafoNaoDirigido();
+            Complementar.ListaVertice = new List<Vertice>();
+            Complementar.ListaAresta = new List<ArestaNaoDirigida>();
+            foreach (var item in ListaVertice)
+            {
+                //paca cada vertice eu paasso em todos 
+                foreach (var item2 in ListaVertice)
+                {
+                    if (item != item2 && !isAdjacente(item, item2))
+                    {// add vertice
+                        ArestaNaoDirigida aux = new ArestaNaoDirigida(item, item2, 0);
+                        Complementar.ListaAresta.Add(aux);
+                    }
+                }
+            }
+            return Complementar;
+        }
         private bool IsSimple()
         {
             // Este metodo verifica se o grafo é simples
@@ -138,26 +192,6 @@ namespace listaPratica1GrafosAlaene
                 }
             }
             return cont;
-        }
-
-        GrafoNaoDirigido getComplementar()
-        {
-            GrafoNaoDirigido Complementar = new GrafoNaoDirigido();
-            Complementar.ListaVertice = new List<Vertice>();
-            Complementar.ListaAresta = new List<ArestaNaoDirigida>();
-            foreach (var item in ListaVertice)
-            {
-                //paca cada vertice eu paasso em todos 
-                foreach (var item2 in ListaVertice)
-                {
-                    if (item != item2 && !isAdjacente(item, item2))
-                    {// add vertice
-                        ArestaNaoDirigida aux = new ArestaNaoDirigida(item, item2, 0);
-                        Complementar.ListaAresta.Add(aux);
-                    }
-                }
-            }
-             return Complementar;
         }
     }
 }

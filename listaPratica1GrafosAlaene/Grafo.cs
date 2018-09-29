@@ -25,31 +25,22 @@ namespace listaPratica1GrafosAlaene
             this.numVertice = 0;
         }
 
-        public bool isNulo()
-        {
-            return true;
-        }
-        public bool isCompleto()
-        {
-         //retorna true se o grafo for simples e se o grau de todos os vertices forem iguais a qtde total de vertices -1 */
-            if (IsSimple() && VerificaGrauCompl())
-            {
-                return true;
-            }
-            else
-                return false;
-        }
-        public bool isConexo()
-        {
-            // verifica se é possível traçar um caminho entre um qualquer vertice inicial,e um vertice final
-            int v_aux = ListaAresta.First().v1.valor;
-            int v_aux2 = ListaAresta.First().v2.valor;
 
-            if (ExisteIsolado() > 0) // verifica se a  qtde de vertices isolados é maior que ZERO.
+        private bool VerificaGrauCompl()
+        {
+            /*Este é um metedo que auxilia a verificar se em grafo é completo, retornando true se todos os vertices
+             * do grafo tiverem grau igual a quantidade total de vertices -1*/
+            int aux = numVertice - 1;
+            foreach (var item in ListaVertice)
             {
-                return false;
+                if (item.grau != aux)
+                {
+                    return false;
+                }
             }
             return true;
         }
+
+
     }
 }

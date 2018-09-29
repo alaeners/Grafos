@@ -13,11 +13,10 @@ namespace listaPratica1GrafosAlaene
      */
     class GrafoDirigido : Grafo
     {
-        public List<ArestaNaoDirigida> ListaAresta;
-
+        public List<ArestaDirigida> ListaAresta;
         public GrafoDirigido(): base()
         {
-            this.ListaAresta = new List<ArestaNaoDirigida>();
+            this.ListaAresta = new List<ArestaDirigida>();
         }
         public int getGrauEntrada(Vertice v1)
         {
