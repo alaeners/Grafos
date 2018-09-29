@@ -18,8 +18,7 @@ namespace listaPratica1GrafosAlaene
         /*Declarando as variaveis para acesso nos métodos e verificar os grafos*/
         public int grau;
         public int valor;
-        public string tipo_grafo;
-
+       
         /*Contrutor da classe para criar vertices com  X valores*/
         public Vertice(int valor, ref GrafoDirigido grafo)
         {

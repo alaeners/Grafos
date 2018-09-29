@@ -14,7 +14,7 @@ namespace listaPratica1GrafosAlaene
      */
     class GrafoNaoDirigido : Grafo
     {
-        List<ArestaNaoDirigida> ListaAresta;
+        public List<ArestaNaoDirigida> ListaAresta;
         public GrafoNaoDirigido()
         {
             ListaAresta = new List<ArestaNaoDirigida>();
