@@ -29,14 +29,12 @@ namespace listaPratica1GrafosAlaene
             foreach (var item in ListaAresta)
             {
                 if (((item.v1.valor == v1.valor)
-                    || (item.v1.valor == v1.valor))
-                    && ((item.v2.valor == v2.valor)
+                    || (item.v2.valor == v1.valor))
+                    && ((item.v1.valor == v2.valor)
                     || (item.v2.valor == v2.valor)))
                     {
                         return true;
                     }
-                    else
-                        return false;
             }
             return false;
         }
@@ -135,7 +133,7 @@ namespace listaPratica1GrafosAlaene
             return true;
         }
 
-        GrafoNaoDirigido getComplementar()
+        public GrafoNaoDirigido getComplementar()
         {
             GrafoNaoDirigido Complementar = new GrafoNaoDirigido();
             Complementar.ListaVertice = new List<Vertice>();
@@ -170,9 +168,11 @@ namespace listaPratica1GrafosAlaene
         {
             /*Este é um metedo que auxilia a verificar se em grafo é completo, retornando true se todos os vertices
              * do grafo tiverem grau igual a quantidade total de vertices -1*/
+
             int aux = numVertice - 1;
             foreach (var item in ListaVertice)
             {
+                item.grau = getGrau(item);
                 if (item.grau != aux)
                 {
                     return false;

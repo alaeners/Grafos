@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 
@@ -21,7 +18,8 @@ namespace listaPratica1GrafosAlaene
 * Professora: Eveline Alonso");
         }
 
-        public static void carregaGrafo() {
+        public static void carregaGrafo()
+        {
 
             grafoD = new GrafoDirigido();
             grafoND = new GrafoNaoDirigido();
@@ -36,14 +34,16 @@ namespace listaPratica1GrafosAlaene
             string[] naoDirigido = File.ReadAllLines(@"nao-dirigido.txt");
             string[] dirigido = File.ReadAllLines(@"dirigido.txt");
 
+            grafoND.numVertice = int.Parse(naoDirigido[0]);
             //Inserindo vertices na lista
-            for (int i = 0; i < int.Parse(naoDirigido[0]); i++)
+            for (int i = 0; i < grafoND.numVertice; i++)
             {
                 grafoND.ListaVertice.Add(new Vertice(i + 1, ref grafoND));
-            
+
             }
 
-            for (int i = 0; i < int.Parse(dirigido[0]); i++)
+            grafoD.numVertice = int.Parse(dirigido[0]);
+            for (int i = 0; i < grafoD.numVertice; i++)
             {
                 grafoD.ListaVertice.Add(new Vertice(i + 1, ref grafoD));
 
@@ -57,7 +57,7 @@ namespace listaPratica1GrafosAlaene
 
                 v1 = grafoND.ListaVertice.Find(x => x.valor == int.Parse(linhaArq[0]));
                 v2 = grafoND.ListaVertice.Find(x => x.valor == int.Parse(linhaArq[1]));
-                grafoND.ListaAresta.Add(new ArestaNaoDirigida(v1,v2,int.Parse(linhaArq[2])));
+                grafoND.ListaAresta.Add(new ArestaNaoDirigida(v1, v2, int.Parse(linhaArq[2])));
             }
 
             for (int i = 1; i < dirigido.Length; i++)
@@ -94,47 +94,135 @@ namespace listaPratica1GrafosAlaene
                 Console.Clear();
                 Console.WriteLine("ESCOLHA NOVAMENTE ------ Essa é sua tentaiva " + cont++);
                 Console.WriteLine("Digite:  \n\t 1 para Grafos NÃO DIRIGIDOS \n\t 2  para Grafos DIRIGIDO");
-                opcao = int.Parse(Console.ReadLine());                
+                opcao = int.Parse(Console.ReadLine());
             }
 
-            if (opcao == 2)
+            if (opcao == 1)
             {
-                opcao = 0;
-                Console.Write("");
                 Console.Clear();
-                Console.WriteLine("Ótimo, vamos para GRAFOS DIRIGIDOS, escolha o método:");
-                Console.Write("");
-                Console.Write(@"ESCOLHA 1 para : • int getGrauEntrada (Vertice v1);
-ESCOLHA 2 para : • int getGrauSaida (Vertice v1);");
-                opcao = int.Parse(Console.ReadLine());
-                switch (opcao)
+                cabecalho();
+                Console.WriteLine("--- * --- * --- * --- * --- * --- * --- * --- * ");
+                Console.WriteLine("Grafo Dirigido - Grau de Entrada");
+
+                foreach (Vertice v in grafoD.ListaVertice)
                 {
-                    case 1:
-                        Console.Clear();
-                        foreach (Vertice v in grafoD.ListaVertice)
-                        {
-                            Console.WriteLine(" "+grafoD.getGrauEntrada(v));
-                            Console.Write("");
-                        }
-                        break;
-                    case 2:
-                        Console.Clear();
-                        foreach (Vertice v in grafoD.ListaVertice)
-                        {
-                            Console.WriteLine(" " + grafoD.getGrauSaida(v));
-                            Console.Write("");
-                            Console.ReadKey();
-                        }
-                        break;
-                    default:
-                        break;
+                    Console.WriteLine(" " + grafoD.getGrauEntrada(v));
+                    Console.Write("");
                 }
+                
+                Console.WriteLine("--- * --- * --- * --- * --- * --- * --- * --- * ");
+                Console.WriteLine("Grafo Dirigido - Grau de Saída");
+                foreach (Vertice v in grafoD.ListaVertice)
+                {
+                    Console.WriteLine(" " + grafoD.getGrauSaida(v));
+                    Console.Write("");
+                }
+                Console.ReadKey();
+
             }
             else
             {
-                Console.Write("");
                 Console.Clear();
-                Console.WriteLine("Ótimo, vamos para GRAFOS NÃO DIRIGIDOS");
+                cabecalho();
+                Console.WriteLine("--- * --- * --- * --- * --- * --- * --- * --- * ");
+                Console.WriteLine("Grafo Não Dirigido - isAdjacente");
+                foreach (Vertice v in grafoND.ListaVertice)
+                {
+                    foreach (var v2 in grafoND.ListaVertice)
+                    {
+                        if (v != v2)
+                        {
+                            Console.WriteLine("isAdjacente({0}, {1}) " + grafoND.isAdjacente(v, v2), v.valor, v2.valor);
+                        }
+                    }
+                }
+                ProximoMetodo();
+
+                Console.Clear();
+                cabecalho();
+                Console.WriteLine("--- * --- * --- * --- * --- * --- * --- * --- * ");
+                Console.WriteLine("Grafo Não Dirigido - getGrau");
+                foreach (Vertice v in grafoND.ListaVertice)
+                {
+                    Console.WriteLine(" " + grafoND.getGrau(v));
+                }
+                ProximoMetodo();
+
+                Console.Clear();
+                cabecalho();
+                Console.WriteLine("--- * --- * --- * --- * --- * --- * --- * --- * ");
+                Console.WriteLine("Grafo Não Dirigido - isIsolado");
+                foreach (Vertice v in grafoND.ListaVertice)
+                {
+                    Console.WriteLine(" " + grafoND.isIsolado(v));
+                }
+                ProximoMetodo();
+
+                Console.Clear();
+                cabecalho();
+                Console.WriteLine("--- * --- * --- * --- * --- * --- * --- * --- * ");
+                Console.WriteLine("Grafo Não Dirigido - isPendente");
+                foreach (Vertice v in grafoND.ListaVertice)
+                {
+                    Console.WriteLine(" " + grafoND.isPendente(v));
+                }
+                ProximoMetodo();
+
+                Console.Clear();
+                cabecalho();
+                Console.WriteLine("--- * --- * --- * --- * --- * --- * --- * --- * ");
+                Console.WriteLine("Grafo Não Dirigido - isRegular");
+
+                Console.WriteLine(" " + grafoND.isRegular());
+
+                ProximoMetodo();
+
+                Console.Clear();
+                cabecalho();
+                Console.WriteLine("--- * --- * --- * --- * --- * --- * --- * --- * ");
+                Console.WriteLine("Grafo Não Dirigido - isNulo");
+
+                Console.WriteLine(" " + grafoND.isNulo());
+
+                ProximoMetodo();
+
+                Console.Clear();
+                cabecalho();
+                Console.WriteLine("--- * --- * --- * --- * --- * --- * --- * --- * ");
+                Console.WriteLine("Grafo Não Dirigido - isComplete");
+
+                Console.WriteLine(" " + grafoND.isCompleto());
+
+                ProximoMetodo();
+
+                Console.Clear();
+                cabecalho();
+                Console.WriteLine("--- * --- * --- * --- * --- * --- * --- * --- * ");
+                Console.WriteLine("Grafo Não Dirigido - isConexo");
+
+                Console.WriteLine(" " + grafoND.isConexo());
+
+                ProximoMetodo();
+
+                Console.Clear();
+                cabecalho();
+                Console.WriteLine("--- * --- * --- * --- * --- * --- * --- * --- * ");
+                Console.WriteLine("Grafo Não Dirigido - GetComplementar");
+                GrafoNaoDirigido complementar = grafoND.getComplementar();
+                if (complementar.ListaAresta.Count > 0)
+                {
+                    foreach (ArestaNaoDirigida item in complementar.ListaAresta)
+                    {
+                        Console.WriteLine(item.v1.valor + ", " + item.v2.valor + ", " + item.peso);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("O grafo é completo, portanto não existe um grafo complementar");
+                }
+                
+                Console.WriteLine("Aperte qualquer tecla para finalizar.");
+                Console.ReadKey();
             }
 
             switch (opcao)
@@ -143,6 +231,11 @@ ESCOLHA 2 para : • int getGrauSaida (Vertice v1);");
                 default:
                     break;
             }
+        }
+
+        private static void ProximoMetodo()
+        {
+            Console.WriteLine("Aperte qualquer tecla para o próximo método");
             Console.ReadKey();
         }
     }

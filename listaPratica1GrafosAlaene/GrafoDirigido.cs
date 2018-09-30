@@ -24,7 +24,12 @@ namespace listaPratica1GrafosAlaene
             int cont = 0;
             foreach (var item in ListaAresta)
             {
-                if ((item.v1.valor == v1.valor) && (item.direcao == -1))
+                if ((item.v1.valor == v1.valor) 
+                    && (item.direcao == -1))
+                {
+                    cont++;
+                } else if ((item.v2.valor == v1.valor) 
+                    && (item.direcao == 1))
                 {
                     cont++;
                 }
@@ -42,7 +47,12 @@ namespace listaPratica1GrafosAlaene
                 {
                     cont++;
                 }
-            }
+                else if ((item.v2.valor == v1.valor) 
+                    && (item.direcao == -1))
+                {
+                    cont++;
+                }
+            } 
             return cont;
         }
     }

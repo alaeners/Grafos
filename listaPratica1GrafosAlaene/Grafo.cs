@@ -19,7 +19,6 @@ namespace listaPratica1GrafosAlaene
         /*Contruindo um grafo e criando uma nova lista de vestices para ele*/ 
         public Grafo()
         {
-            Program.cabecalho();
 
             ListaVertice = new List<Vertice>();
             this.numVertice = 0;
