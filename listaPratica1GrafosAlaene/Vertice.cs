@@ -12,8 +12,29 @@ namespace listaPratica1GrafosAlaene
      * Entrega via SGA em: 01/10/2018
      * Professora Eveline Alonso
      */
+
     class Vertice
     {
-        int totV, v1, v2 = 0;
+        /*Declarando as variaveis para acesso nos métodos e verificar os grafos*/
+        public int grau;
+        public int valor;
+       
+        /*Contrutor da classe para criar vertices com  X valores*/
+        public Vertice(int valor, ref GrafoDirigido grafo)
+        {
+            this.valor = valor;
+        }
+
+        public Vertice(int valor, ref GrafoNaoDirigido grafo)
+        {
+            this.valor = valor;
+            this.grau = CalculaGrau(ref grafo);
+        }
+
+        /*Verifica o grau dos vértices*/
+        private int CalculaGrau(ref GrafoNaoDirigido grafo)
+        {
+            return grafo.getGrau(this) + 1;
+        }
     }
 }

@@ -14,22 +14,32 @@ namespace listaPratica1GrafosAlaene
      */
     class Grafo
     {
-        public bool isNulo()
-        {
-            return true;
-        }
-        public bool isCompleto()
-        {
-            return false;
-        }
-        public bool isConexo()
-        {
-            return true;
-        }
+        public int numVertice;
+        public List<Vertice> ListaVertice;
+        /*Contruindo um grafo e criando uma nova lista de vestices para ele*/ 
         public Grafo()
         {
-            Program.cabecalho();
 
+            ListaVertice = new List<Vertice>();
+            this.numVertice = 0;
         }
+
+
+        private bool VerificaGrauCompl()
+        {
+            /*Este é um metedo que auxilia a verificar se em grafo é completo, retornando true se todos os vertices
+             * do grafo tiverem grau igual a quantidade total de vertices -1*/
+            int aux = numVertice - 1;
+            foreach (var item in ListaVertice)
+            {
+                if (item.grau != aux)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
     }
 }
