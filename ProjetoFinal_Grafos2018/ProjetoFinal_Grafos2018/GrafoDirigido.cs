@@ -442,74 +442,12 @@ namespace ProjetoFinal_Grafos2018
 
         public void verificaSeGrafoFortementeConexo()
         {
-            bool primeiravez = true;
-            Vertices orig = Vertices[0];
-
-            int[] antecessores = new int[Vertices.Count];
-
-            for (int i = 0; i < antecessores.Length; i++)
+            Dictionary<Vertices, List<Vertices>> Adj = new Dictionary<Vertices, List<Vertices>>();
+            foreach (var vertice in Vertices)
             {
-                antecessores[i] = -1;
+                Adj.Add(vertice, getListaAdjacencia(vertice));
             }
-            bool[] foiVisitado = new bool[Vertices.Count];
-
-            foiVisitado[orig.Id - 1] = true;
-            Queue<Vertices> fila = new Queue<Vertices>();
-
-            fila.Enqueue(orig);
-
-            Vertices aux;
-            List<Vertices> grupo = new List<Vertices>();
-            do
-            {
-                while (fila.Count() > 0)
-                {
-                    aux = fila.Dequeue();
-                    grupo.Add(aux);
-                    List<Vertices> listaAdjacencia = this.getListaAdjacencia(aux);
-                    foreach (var adjacente in listaAdjacencia)
-                    {
-                        if (!foiVisitado[adjacente.Id - 1])
-                        {
-                            foiVisitado[adjacente.Id - 1] = true;
-                            fila.Enqueue(adjacente);
-                            antecessores[adjacente.Id - 1] = aux.Id;
-                        }
-                    }
-                }
-
-                if (primeiravez)
-                {
-                    Console.WriteLine("Cada linha abaixo representa um grupo de aeroportos que estão interligados. Se houver apenas uma linha, significa que todos os aeroportos estão interligados");
-                    Console.WriteLine();
-                    primeiravez = false;
-                }
-                
-
-                ImprimirGrupoDeAeroportos(grupo);
-                grupo.Clear();
-
-                if (ExisteNaoVisitado(foiVisitado)) //existe mais um grupo
-                {
-                    for (int i = 0; i < foiVisitado.Length; i++)
-                    {
-                        if (!foiVisitado[i])
-                        {
-                            foiVisitado[i] = true;
-                            fila.Enqueue(Vertices.Find(x => x.Id == i + 1));
-                            break;
-                        }
-                    }
-
-                }
-                else
-                {
-                    break;
-                }
-
-                //imprimir o grupo
-            } while (true);
-                
+            new Tarjan(vertices, Adj).TarjanAlg();
         }
 
         private void ImprimirGrupoDeAeroportos(List<Vertices> grupo)

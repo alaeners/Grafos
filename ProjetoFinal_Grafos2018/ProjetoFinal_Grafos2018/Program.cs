@@ -82,7 +82,7 @@ namespace ProjetoFinal_Grafos2018
                 Console.WriteLine("5 - Verificar se todos os aeroportos estão conectados (ou quais grupos estão)");
                 Console.WriteLine("6 - Como não chegar atrasado na reunião");
                 Console.WriteLine("7 - Quais rota serão utilizadas na minha empresa de tráfico aéreo");
-                Console.WriteLine("9 - Sair");
+                Console.WriteLine("0 - Sair");
 
                 acao = Console.ReadLine();
 
@@ -93,7 +93,7 @@ namespace ProjetoFinal_Grafos2018
                         do
                         {
                             Console.WriteLine("Qual é o aeroporto de origem?");
-                            origem = Console.ReadLine();
+                            origem = Console.ReadLine().ToUpper();
                             if (Voos.Vertices.FirstOrDefault(x => x.Aeroporto == origem) == null)
                             {
                                 Console.WriteLine("Aeroporto não encontrado.");
@@ -107,7 +107,7 @@ namespace ProjetoFinal_Grafos2018
                         do
                         {
                             Console.WriteLine("Qual é o aeroporto de destino?");
-                            destino = Console.ReadLine();
+                            destino = Console.ReadLine().ToUpper();
                             if (Voos.Vertices.FirstOrDefault(x => x.Aeroporto == destino) == null)
                             {
                                 Console.WriteLine("Aeroporto não encontrado.");
@@ -126,7 +126,7 @@ namespace ProjetoFinal_Grafos2018
                         do
                         {
                             Console.WriteLine("Qual é o aeroporto de origem?");
-                            origem = Console.ReadLine();
+                            origem = Console.ReadLine().ToUpper();
                             if (Voos.Vertices.FirstOrDefault(x => x.Aeroporto == origem) == null)
                             {
                                 Console.WriteLine("Aeroporto não encontrado.");
@@ -141,7 +141,7 @@ namespace ProjetoFinal_Grafos2018
                         do
                         {
                             Console.WriteLine("Qual é o aeroporto de destino?");
-                            destino = Console.ReadLine();
+                            destino = Console.ReadLine().ToUpper();
                             if (Voos.Vertices.FirstOrDefault(x => x.Aeroporto == destino) == null)
                             {
                                 Console.WriteLine("Aeroporto não encontrado.");
@@ -160,7 +160,7 @@ namespace ProjetoFinal_Grafos2018
                         do
                         {
                             Console.WriteLine("Qual é o aeroporto de origem?");
-                            origem = Console.ReadLine();
+                            origem = Console.ReadLine().ToUpper();
                             if (Voos.Vertices.FirstOrDefault(x => x.Aeroporto == origem) == null)
                             {
                                 Console.WriteLine("Aeroporto não encontrado.");
@@ -175,7 +175,7 @@ namespace ProjetoFinal_Grafos2018
                         do
                         {
                             Console.WriteLine("Qual é o aeroporto de destino?");
-                            destino = Console.ReadLine();
+                            destino = Console.ReadLine().ToUpper();
                             if (Voos.Vertices.FirstOrDefault(x => x.Aeroporto == destino) == null)
                             {
                                 Console.WriteLine("Aeroporto não encontrado.");
@@ -194,7 +194,7 @@ namespace ProjetoFinal_Grafos2018
                         do
                         {
                             Console.WriteLine("Qual é o aeroporto de origem?");
-                            origem = Console.ReadLine();
+                            origem = Console.ReadLine().ToUpper();
                             if (Voos.Vertices.FirstOrDefault(x => x.Aeroporto == origem) == null)
                             {
                                 Console.WriteLine("Aeroporto não encontrado.");
@@ -209,7 +209,7 @@ namespace ProjetoFinal_Grafos2018
                         do
                         {
                             Console.WriteLine("Qual é o aeroporto de destino?");
-                            destino = Console.ReadLine();
+                            destino = Console.ReadLine().ToUpper();
                             if (Voos.Vertices.FirstOrDefault(x => x.Aeroporto == destino) == null)
                             {
                                 Console.WriteLine("Aeroporto não encontrado.");
@@ -234,7 +234,7 @@ namespace ProjetoFinal_Grafos2018
                         do
                         {
                             Console.WriteLine("Qual é o aeroporto de origem?");
-                            origem = Console.ReadLine();
+                            origem = Console.ReadLine().ToUpper();
                             if (Voos.Vertices.FirstOrDefault(x => x.Aeroporto == origem) == null)
                             {
                                 Console.WriteLine("Aeroporto não encontrado.");
@@ -249,7 +249,7 @@ namespace ProjetoFinal_Grafos2018
                         do
                         {
                             Console.WriteLine("Qual é o aeroporto de destino?");
-                            destino = Console.ReadLine();
+                            destino = Console.ReadLine().ToUpper();
                             if (Voos.Vertices.FirstOrDefault(x => x.Aeroporto == destino) == null)
                             {
                                 Console.WriteLine("Aeroporto não encontrado.");
@@ -287,7 +287,7 @@ namespace ProjetoFinal_Grafos2018
                         Console.WriteLine("Aperte qualquer botão para continuar");
                         Console.ReadKey();
                         break;
-                    case "9":
+                    case "0":
                         break;
                     default:
                         Console.Clear();
@@ -296,7 +296,7 @@ namespace ProjetoFinal_Grafos2018
                         break;
                 }
 
-            } while (acao != "9");
+            } while (acao != "0");
 
 
             //ComoNaoChegarAtrasadoNaReuniao("CONFINS", "CONGONHAS", new TimeSpan(19, 00, 00));
