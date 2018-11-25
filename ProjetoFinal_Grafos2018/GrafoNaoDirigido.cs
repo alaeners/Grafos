@@ -145,7 +145,7 @@ namespace ProjetoFinal_Grafos2018
 
             return adjacentes;
         }
-        /*AGM ordenada por distancia */
+        /*AGM ordenada por distancia --- Kruskal */
         private GrafoNaoDirigido ArvoreGeradoraMinima()
         {
             List<Arestas> aux = arestas.OrderBy(x => x.Distancia).ToList();
