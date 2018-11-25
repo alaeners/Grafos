@@ -1,0 +1,7 @@
+C:\Users\Pedro\Documents\Visual Studio 2017\Projects\ProjetoFinal_Grafos2018\ProjetoFinal_Grafos2018\bin\Debug\ProjetoFinal_Grafos2018.exe.config
+C:\Users\Pedro\Documents\Visual Studio 2017\Projects\ProjetoFinal_Grafos2018\ProjetoFinal_Grafos2018\bin\Debug\ProjetoFinal_Grafos2018.exe
+C:\Users\Pedro\Documents\Visual Studio 2017\Projects\ProjetoFinal_Grafos2018\ProjetoFinal_Grafos2018\bin\Debug\ProjetoFinal_Grafos2018.pdb
+C:\Users\Pedro\Documents\Visual Studio 2017\Projects\ProjetoFinal_Grafos2018\ProjetoFinal_Grafos2018\obj\Debug\ProjetoFinal_Grafos2018.csprojAssemblyReference.cache
+C:\Users\Pedro\Documents\Visual Studio 2017\Projects\ProjetoFinal_Grafos2018\ProjetoFinal_Grafos2018\obj\Debug\ProjetoFinal_Grafos2018.csproj.CoreCompileInputs.cache
+C:\Users\Pedro\Documents\Visual Studio 2017\Projects\ProjetoFinal_Grafos2018\ProjetoFinal_Grafos2018\obj\Debug\ProjetoFinal_Grafos2018.exe
+C:\Users\Pedro\Documents\Visual Studio 2017\Projects\ProjetoFinal_Grafos2018\ProjetoFinal_Grafos2018\obj\Debug\ProjetoFinal_Grafos2018.pdb
