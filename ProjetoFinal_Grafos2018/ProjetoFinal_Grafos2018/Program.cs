@@ -297,13 +297,6 @@ namespace ProjetoFinal_Grafos2018
                 }
 
             } while (acao != "0");
-
-
-            //ComoNaoChegarAtrasadoNaReuniao("CONFINS", "CONGONHAS", new TimeSpan(19, 00, 00));
-            //RotasEfetivamenteUtilizadas();
-            //verificaSeGrafoFortementeConexo();
-            //menorCaminhoEmConexoes("CONFINS", "CONGONHAS");
-            //MenorCaminhoTempoTotal("CONFINS", "CONGONHAS");
         }
 
         private static void MenorCaminhoTempoTotal(string origem, string destino)
